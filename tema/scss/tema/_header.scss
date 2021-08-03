@@ -1,0 +1,66 @@
+.encabezado {
+	padding: 0px 15px;
+
+	&__logo {
+		text-align: center;
+
+		& img {
+			width: 80%;
+			margin: 30px auto 30px auto;
+
+			@include desde(movil) {
+				width: 50%;
+			}
+
+			@include desde(tablet) {
+				width: 100%;
+				margin: 15px 0px 5px 0px;
+			}
+
+			@include desde(web) {
+				width: 100%;
+			}
+
+			@include desde(hd) {
+				width: 80%;
+			}
+		}
+
+		@include desde(tablet) {
+			text-align: left;
+		}
+	}
+
+	&__redessociales {
+		text-align: center;
+		padding-top: 30px;
+		font-size: 40px;
+
+		& .icon {
+			color: $gris-fuerte;
+			margin-left: 10px;
+
+			&:hover {
+				color: lighten($gris-fuerte, 20%);
+			}
+		}
+
+		& .icon-bars {
+			display: none;
+
+			@include desde(tablet) {
+				display: initial;
+			}
+		}
+
+		@include desde(tablet) {
+			text-align: right;
+			font-size: 25px;
+		}
+	}
+
+	@include desde(tablet) {
+		padding: 0px 100px;
+	}
+
+}

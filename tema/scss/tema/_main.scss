@@ -1,0 +1,257 @@
+body {
+	width: 100%;
+	position: absolute;
+}
+
+.caja-body {
+	width: 100%;
+	overflow: hidden!important;
+	position: absolute;
+}
+
+.contenidos {
+	margin-top: 30px;
+	padding: 0px 15px;
+	
+	& p {
+		color: $gris-fuerte;
+		text-align: justify;
+		font-family: $fuente-sans;
+		font-weight: lighter;
+	}
+
+	& ul {
+		padding: 0.5em 1.5em;
+
+		& li {
+			color: $gris-fuerte;
+			text-align: justify;
+			font-family: $fuente-sans;
+			font-weight: lighter;
+		}
+	}
+
+	& b {
+		font-weight: bold;
+	}
+
+	& .azul {
+		color: $azul-fuerte;
+	}
+
+	@include desde(tablet) {
+		padding: 0px 100px;
+	}
+
+	& a {
+		color: $gris-fuerte;
+		text-align: justify;
+		font-family: $fuente-sans;
+		font-weight: lighter;
+		text-decoration: none;
+
+		&:hover {
+			color: $azul-fuerte;
+			//text-decoration: underline;
+		}
+	}
+
+}
+
+
+.caja-fija {
+
+	@include desde(tablet) {
+		height: 400px!important;
+	}
+}
+
+.areas {
+	display: block;
+	margin-bottom: 80px;
+
+	& .areas-item {
+		display: block;
+		text-align: left;
+		margin: 3em auto;
+		padding: 0em 4em;
+		float: left!important;
+	}
+
+	@include desde-hasta(base, tablet) {
+		@include cuadricula("areas-item", 1, 0%) { }
+	}	
+
+	@include desde-hasta(tablet, web) {
+		@include cuadricula("areas-item", 2, 0%) { }
+	}
+
+	@include desde(web) {
+		@include cuadricula("areas-item", 3, 0%) { }
+	}
+}
+
+.directorio {
+	display: block;
+	margin-bottom: 80px;
+
+
+
+	& .directorio-item {
+		display: block;
+		text-align: center;
+		margin: 3em auto;
+		padding: 0em 4em;
+		float: left!important;
+
+	}
+
+	@include desde-hasta(base, tablet) {
+		@include cuadricula("directorio-item", 1, 0%) { }
+	}	
+
+	@include desde-hasta(tablet, web) {
+		@include cuadricula("directorio-item", 2, 0%) { }
+	}
+
+	@include desde(web) {
+		@include cuadricula("directorio-item", 3, 0%) { }
+	}
+}
+
+.contacto {
+	padding-top: 10px;
+	& .caja {
+		margin-bottom: 30px;
+
+		@include desde(web) {
+			padding-left: 50px;
+		}
+	}
+}
+
+
+
+.formulario {
+
+	& .bloque {
+		display: block;
+		margin-bottom: 10px;
+
+		&__descripcion {
+			display: block;
+			color: #999;
+		}
+	}
+
+	& input {
+		padding: 0.3em;
+		border-radius: 5px;
+		border: #999 1px solid;
+		width: 80%;
+	}
+
+	& textarea {
+		padding: 0.3em;
+		border-radius: 5px;
+		border: #999 1px solid;
+		width: 80%;
+		height: 80px;
+	}
+
+	& .boton-enviar {
+		background: #EEE;
+		font-size: 14px;
+		padding: 0.4em;
+	}
+}
+
+.direcciones {
+	&__bloque p {
+		font-size: 15px;
+		text-align: center;
+		margin-bottom: 15px;
+
+		@include desde(web) {
+			font-size: 13.5px;
+			text-align: left;
+		}
+
+		@include desde(hd) {
+			font-size: 15px;
+			text-align: left;
+		}
+	}
+	
+}
+
+.linea-contacto {
+	border-left: $gris-fuerte 5em solid;
+	height: 10px;
+	display: block;
+	background: $azul-fuerte;
+	
+	@include desde(tablet) {
+		margin-top: 10px;
+	}
+}
+
+.email-principal {
+	font-size: 20px;
+	color: $azul-fuerte;
+	font-weight: 600;
+
+	@include desde(web) {
+		padding-top: 15px!important;
+		font-size: 20px;
+	}
+}
+
+
+
+.ficha {
+	display: block;
+
+	&__encabezado {
+		margin-bottom: 15px;
+	}
+
+	& h2 {
+		color: $azul-fuerte;
+		font-weight: bold;
+		font-size: 22px;
+		float: left;
+	}
+
+	.cerrar-ficha {
+		float: right;
+		font-size: 32px;
+		color: $gris-fuerte;
+	}
+
+	&__item {
+		display: none;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		overflow: auto;
+		height: 370px;
+		width: 100%;
+
+		& p {
+			display: block!important;
+
+			& a {
+			display: block;
+			color: $azul-fuerte;
+			text-decoration: none;
+			margin: 50px 0px!important;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		}
+
+		
+	}
+}
